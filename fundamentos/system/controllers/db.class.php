@@ -7,7 +7,7 @@ class db {
 	//senha
 	private $senha = '';
 	//banco de dados
-	private $database = 'zilla';
+	private $database = 'fundamentos';
 	public function conecta_mysql(){
 		//criar a conexao
 		$con = mysqli_connect($this->host, $this->usuario, $this->senha, $this->database);

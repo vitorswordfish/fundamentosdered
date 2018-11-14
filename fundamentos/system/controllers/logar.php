@@ -15,22 +15,16 @@
 
 	if($resultado_id){
 		$dados_usuario = mysqli_fetch_array($resultado_id);
-		if(isset($dados_usuario['privilegio'])){
+		if(isset($dados_usuario['email'])){
 
-      $arr = explode(' ',trim($dados_usuario['nome']));
-      echo $arr[0];
+	      $arr = explode(' ',trim($dados_usuario['nome']));
+	      echo $arr[0];
 
-			$_SESSION['privilegio'] = $dados_usuario['privilegio'];
 			$_SESSION['email'] = $dados_usuario['email'];
 			$_SESSION['id_usuario'] = $dados_usuario['id_usuario'];
-      $_SESSION['nome_completo'] = $dados_usuario['nome'];
-			$_SESSION['nome'] = $arr[0];
 
-			if($_SESSION['privilegio'] == 00){
-					header('Location: ../../../zilla/sistema/cliente/');
-			} else {
-          header('Location: ../../../zilla/sistema/membro/')
-      }
+			header('Location: ../../usuario.php');
+
 
 		} else {
 			header('Location: ../../../zilla/index.php?critico=1');
